@@ -17,23 +17,32 @@
 
         .video-container {
             display: flex;
-            flex-direction: column; /* stack videos vertically */
+            flex-direction: column;
             align-items: center;
-            gap: 20px; /* space between videos */
+            gap: 20px;
             padding: 20px;
         }
 
+        /* YouTube iframe style */
+        iframe {
+            width: 80%;
+            max-width: 700px;
+            aspect-ratio: 16 / 9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: none;
+        }
+
         video {
-            width: 80%;        /* responsive width: 80% of container */
-            max-width: 700px;  /* max size for large screens */
-            height: auto;      /* maintain aspect ratio */
+            width: 80%;
+            max-width: 700px;
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        /* Optional: media query for very small screens */
         @media (max-width: 500px) {
-            video {
+            video, iframe {
                 width: 95%;
             }
         }
@@ -44,11 +53,15 @@
 <h1>My Responsive Video Gallery</h1>
 
 <div class="video-container">
-    <video controls>
-        <source src="https://drive.google.com/uc?export=download&id=1QGJNaxcKDETAED7dBI4d2eAezajbeN3o" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
 
+    <!-- Aredidon.mp4 replaced with YouTube embed -->
+    <iframe 
+        src="https://www.youtube.com/embed/RDHZY2oT-7A"
+        title="Aredidon Video"
+        allowfullscreen>
+    </iframe>
+
+    <!-- Other videos still from Google Drive -->
     <video controls>
         <source src="https://drive.google.com/uc?export=download&id=1rlSt4rpjwvTWRD5pjo5GzFtF9BqCkUVa" type="video/mp4">
         Your browser does not support the video tag.
@@ -58,6 +71,7 @@
         <source src="https://drive.google.com/uc?export=download&id=1wNmn-mVna5Q_wNeabiKXElELFhbH2Gtp" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
 </div>
 
 </body>
